@@ -13,8 +13,126 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-
+path {
+  fill: var(--accent-color)
+}
 .page {
+  display: flex;
+  flex-direction: column;
+  gap:50px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: 'Inter', sans-serif;
+  font-weight: var(--main-font-weight);
+  background-color: var(--background-color);
+  background-image: repeating-linear-gradient(to right, var(--gradient-net-color) 0px 2px, transparent 2px 4px),
+  repeating-linear-gradient(to bottom, var(--gradient-net-color) 0px 2px, transparent 2px 4px),
+  linear-gradient(to bottom, var(--gradient-vertical-color-first) 00.01%, var(--gradient-vertical-color-last));
+  background-size: cover;
+  color: var(--font-color);
 }
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0px 50px;
+  width: 100%;
+  gap: 23px;
+  min-height: 327px;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-text);
+}
+.header__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+  gap:20px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.header__theme-menu {
+  margin-bottom: 25px;
+}
+
+.theme-menu__button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap:11px;
+  margin-left: 20px;
+}
+.theme-menu__button:disabled {
+  color: var(--font-accent-color);
+}
+.theme-menu__button:disabled::before {
+  position: absolute;
+  left: -13px;
+  content: '▶';
+}
+.title {
+  font-size: 49px;
+}
+.content__section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  width: 100%;
+  min-height: 200px;
+}
+.content__title {
+  padding: 4px 10px 0px;
+  min-height: 52px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.content__image {
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  max-width: 100%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 25px;
+  font-size: 18px;
+}
+.content-text {
+  display: block;
+}
+.button__text {
+  display: flex;
+  justify-content: end;
+}
+.heart__button {
+  height: 38px;
+  width: 39px;
+  margin-right: 14px;
+}
+.like__button {
+  margin: 0px 25px 26px 0px;
+  height: 38px;
+  width: 130px;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-text);
+  font-size: 14px;
+  transform: translateY(1px);
+}
+@supports (font-variation-settings: normal) {
+  .page {
+      font-family: var(--main-text), sans-serif;
+  }
+} 

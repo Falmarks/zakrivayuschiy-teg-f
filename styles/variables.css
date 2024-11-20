@@ -1,1 +1,14 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --accent-text: 'PressStart2P-Regular';
+    --main-text:'Inter-Variable';
+    --main-font-weight: normal;
+    --bold-font-weight: bold;
+    --background-color: #FFF;
+    --accent-color: #000;
+    --font-color: #000;
+    --font-accent-color: #666;
+    --gradient-net-color: #d3d3d3;
+    --gradient-vertical-color-first: #e7e7e7;
+    --gradient-vertical-color-last: #1a1a1a;
+
+} 
