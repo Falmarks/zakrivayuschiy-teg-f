@@ -13,9 +13,15 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+
+
+
+/* Покраска SVG */
 path {
   fill: var(--accent-color)
 }
+
+/* Основа */
 .page {
   display: flex;
   flex-direction: column;
@@ -31,6 +37,8 @@ path {
   background-size: cover;
   color: var(--font-color);
 }
+
+/* Шапка */
 .header {
   display: flex;
   flex-direction: column;
@@ -52,37 +60,85 @@ path {
   font-size: 14px;
   text-transform: uppercase;
 }
-
-.header__theme-menu {
-  margin-bottom: 25px;
+.title {
+  font-size: 49px;
 }
 
-.theme-menu__button {
-  position: relative;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 14px;
+/* Меню выбора темы */
+.header__theme-menu {
+  margin-bottom: 25px;
 }
 .theme-menu__list {
   display: flex;
   flex-direction: column;
   align-items: left;
-  gap:11px;
+  gap:12px;
   margin-left: 20px;
 }
+.theme-menu__button {
+  position: relative;
+  background-color: transparent;
+  color: var(--accent-color);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Анимации меню выбора темы */
 .theme-menu__button:disabled {
   color: var(--font-accent-color);
+  pointer-events: none;
 }
 .theme-menu__button:disabled::before {
   position: absolute;
-  left: -13px;
+  left: -18px;
   content: '▶';
+  animation-name: animation-active-button;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
 }
-.title {
-  font-size: 49px;
+@keyframes animation-active-button {
+  0% { transform: none;
+  }
+  50% {transform: translateX(-5px);
+  }
+  00% {transform: none;
+  }
+  }
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  }
+.theme-menu__button:focus-visible {
+  outline: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  }
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 3px;
+  margin-top: -3px;
+  background-color: var(--accent-color);
+  transition: width 0.3s, opacity 0.3s ease;
+  transform: scaleX(0);
+  }
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+  opacity: 0.6;
+  transition: width 0.3s, opacity 0.3s ease;
+  transform: scaleX(1);
+  }
+.theme-menu__button:hover::after {
+  width: 100%;
+  opacity: 0.6;
+  transition: width 0.3s, opacity 0.3s ease;
+  transform: scaleX(1);
 }
+
+/* Основная секция */
 .content__section {
   display: flex;
   flex-direction: column;
@@ -92,7 +148,7 @@ path {
   min-height: 200px;
 }
 .content__title {
-  padding: 4px 10px 0px;
+  padding: 5px 10px 0px;
   min-height: 52px;
   font-size: 18px;
   font-weight: bold;
@@ -105,8 +161,8 @@ path {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  margin: 25px;
+  gap: 27px;
+  margin: 25px 25px 23px;
   font-size: 18px;
 }
 .content-text {
@@ -120,6 +176,7 @@ path {
   height: 38px;
   width: 39px;
   margin-right: 14px;
+  transform: translate(6px, 2px);
 }
 .like__button {
   margin: 0px 25px 26px 0px;
@@ -129,7 +186,15 @@ path {
   border: 2px solid var(--accent-color);
   font-family: var(--accent-text);
   font-size: 14px;
-  transform: translateY(1px);
+  transform: translateY(2px);
+}
+@media (width > 375px) {
+  .header {
+    width: 80%;
+  } 
+  .content__section {
+    width: 80%;
+  }
 }
 @supports (font-variation-settings: normal) {
   .page {
