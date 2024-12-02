@@ -15,7 +15,7 @@
 */
 
 /* Основа */
-.page, .header, .header__title, .theme-menu__list, .save__button{
+.page, .header, .header__title, .theme-menu__list, .save__button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +61,7 @@
   margin-bottom: 25px;
 }
 .theme-menu__list {
-  align-items: left;
+  align-items: start;
   gap:12px;
   margin-left: 20px;
 }
@@ -116,10 +116,13 @@
   }
 
 /* Основная секция */
-.content__section, .content {
+.content__section, .main {
   display: flex;
 }
-.content {
+.main {
+  flex-direction: column;
+  gap: 27px;
+  font-size: 18px;
   gap: 50px;
 }
 .content__section {
@@ -129,8 +132,7 @@
   width: 100%;
 }
 .content__title {
-  padding: 5px 10px 0px;
-  min-height: 52px;
+  padding: 5px 10px 5px;
   font-size: 18px;
   font-weight: bold;
 }
@@ -140,13 +142,8 @@
   border-bottom: 2px solid var(--accent-color);
   max-width: 100%;
 }
-.content {
-  flex-direction: column;
-  gap: 27px;
-  margin: 21px 25px 25px;
-  font-size: 18px;
-}
 .content__text {
+  margin: 21px 25px 26px;
   display: block;
 }
 /* Картиночная */
@@ -157,7 +154,6 @@
   display: block;
   position: absolute;
   color: var(--accent-color);
-  text-transform: uppercase;
   font-size: 14px;
   top: 25px;
   right: 11px;
@@ -200,16 +196,21 @@
   z-index: 1;
 }
 .save__button {
+  padding-top: 15px;
   display: flex;
-  justify-content: space-around;
+  gap:8px;
   align-items: center;
   height: 84px;
-  width: 306px;
-  margin: 52px auto 100px;
+  width: 310px;
+  margin: 0px auto 100px;
 }
 .floppy {
-  fill: var(--font-accent-color);
-  mix-blend-mode: difference;
+  width: 28px;
+  height: 28px;
+}
+.floppy__dialog {
+  width: 39px;
+  height: 39px;
 }
 .button__text {
   position: relative;
@@ -283,19 +284,22 @@
   animation-delay: 0.3s;
 }
 .dialog[open] {
-  height: min(191px,30%);
-  width: min(353px,90%);
-  margin: auto;
+  height: 195px;
+  width: 345px;
+  line-height:150%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0;
+  text-transform: uppercase;
+  font-size: 14px;
   background-color: var(--background-color);
   color: var(--font-color);
   font-family: var(--accent-text);
   border: 2px solid var(--accent-color);
   display: flex;
-  gap: 10px;
+  gap: 30px;
 }
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0.3);
@@ -303,13 +307,38 @@ dialog::backdrop {
 }
 .diag__block {
   display: flex;
-  margin: 30px 42px;
+  margin: 30px 42px 0px;
   gap: 20px;
 }
 .dialog__button {
   height: 38px;
   width: 257px;
   align-self: center;
+  text-transform: uppercase;
+}
+.image__1{
+  filter: saturate(25%);
+}
+.image__2{
+ filter: brightness(30%);
+}
+.image__3{
+ filter: contrast(35%);
+}
+.image__4{
+  filter:opacity(40%);
+}
+.image__5{
+  filter: grayscale(45%);
+}
+.image__6{
+  filter: hue-rotate(-50deg);
+} 
+.image__7{
+  filter: invert(55%);
+}
+.image__8{
+  filter: brightness(30%) saturate(30%);
 }
 @keyframes animation-is-liked-heart {
   0% { transform: scale(1);
@@ -325,10 +354,40 @@ dialog::backdrop {
   }
 }
 
-
 @media (width > 375px) {
+  .header {
+    gap: 25px;
+  }
   .content__section {
     width: 700px;
+    min-height: 368px;
+  }
+  .header__title {
+    margin-top: 136px;
+    font-size: 23px;
+  }
+  .title {
+    font-size: 65px;
+  }
+  .save__button {
+    padding-left: 20px;
+    flex-direction:row;
+    padding-top: 0px;
+    height: 55px;
+    width: 340px;
+  }
+  .floppy {
+    width: 21px;
+    height: 21px;
+  }
+  .dialog[open] {
+    height: 195px;
+    width: 357px;
+  }
+  .image__lable {
+    top: 25px;
+    right: 25px;
+    z-index: 1;
   }
 }
 
