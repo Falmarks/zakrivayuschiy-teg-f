@@ -353,7 +353,6 @@
     color: var(--font-color);
     font-family: var(--accent-text);
     border: 2px solid var(--accent-color);
-    display: flex;
     gap: 30px;
 }
 
