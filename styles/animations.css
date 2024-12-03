@@ -12,3 +12,37 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes animation-active-button {
+    0% {
+        transform: none;
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    00% {
+        transform: none;
+    }
+}
+
+@keyframes animation-is-liked-heart {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes animation-is-liked-sparks {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
