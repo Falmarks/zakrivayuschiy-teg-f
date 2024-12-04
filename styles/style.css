@@ -36,6 +36,7 @@
     background-size: cover;
     background-attachment:fixed;
     color: var(--font-color);
+    line-height: normal;
 }
 
 /* Шапка */
