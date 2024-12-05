@@ -19,7 +19,8 @@
 .header__title,
 .article,
 .theme-menu__list,
-.save__button {
+.save__button,
+.content__group {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,16 +37,19 @@
     background-size: cover;
     background-attachment:fixed;
     color: var(--font-color);
-    line-height: normal;
 }
 
 /* Шапка */
 .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 100px auto 100px;
     gap: 23px;
     background-color: var(--background-color);
     border: 2px solid var(--accent-color);
     font-family: var(--accent-text);
+    width: 100%;
 }
 
 .header__title {
@@ -129,47 +133,74 @@
 
 .main {
     font-size: 18px;
-    gap: 50px;
+    gap: 51px;
 }
 
 .article {
     background-color: var(--background-color);
     border: 2px solid var(--accent-color);
     width: 100%;
+    gap: 25px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  margin: 20px 0px 25px;
   padding: 0px 25px 0px;
-  gap: 28px;
+  gap: 27px;
+}
+
+.content__group {
+    gap: 25px;
+}
+
+.border-top {
+    border-top: 2px solid var(--accent-color);
+}
+
+.border-bottom {
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.border-horizontal {
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
 }
 
 .content__title {
+    display: block;;
     align-self: self-start;
-    padding: 5px 10px 5px;
+    margin: 4px 10px 4px;
     font-size: 18px;
     font-weight: bold;
+    line-height: 22px;
 }
 
 .content__image {
+    display: block;
     position: relative;
-    border-top: 2px solid var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
+    height: 373px;
     width: 100%;
-    object-fit:contain;
-    object-position: top left;
+    object-fit:cover;
+    object-position: left bottom;
 }
 
 .content__text {
-    display: block;
+    line-height: 21px;
+    font-size: 18px;
+}
+
+.figure {
+    display: block;;
+    position: relative;
+    width: 100%;
+}
+
+.lable__group {
+    position: relative;
 }
 
 /* Картиночная */
-.figure {
-    position: relative;
-}
 
 .picture {
   width: 375px;
@@ -181,7 +212,7 @@
     position: absolute;
     color: var(--accent-color);
     font-size: 14px;
-    top: 25px;
+    top: 23px;
     right: 11px;
     z-index: 1;
     font-family: var(--accent-text);
@@ -201,7 +232,7 @@
     display: flex;
     gap: 6px;
     align-self: end;
-    margin: 0px 25px 25px 0px;
+    margin: 0px 25px 25px;
 }
 
 .card__icon-button {
@@ -345,6 +376,7 @@
     width: 345px;
     line-height: 150%;
     max-width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -366,6 +398,7 @@ dialog::backdrop {
 .diag__block {
     display: flex;
     width: 257px;
+    align-self: center;
     margin: 30px auto 0px;
     gap: 20px;
 }
@@ -411,10 +444,18 @@ dialog::backdrop {
 }
 
 @media (width > 375px) {
+    .main {
+        gap: 49px;
+    }
+    .header {
+        width: min(100%, 700px);
+    }
     .article {
         width: min(100%, 700px);
     }
-
+    .content__image {
+        height: 700px;
+    }
     .header__title {
         margin-top: 136px;
         font-size: 23px;
@@ -428,7 +469,7 @@ dialog::backdrop {
     }
 
     .content__text {
-        line-height:1.15 ;
+        line-height:21px;
     }
 
     .save__button {
@@ -449,6 +490,16 @@ dialog::backdrop {
         width: 357px;
     }
     
+    .diag__block {
+        margin: 30px 0px 0px;
+        width: 293px;
+    }
+
+    .dialog__button {
+        width: 297px;
+        margin: 0px;
+    }
+
     .image__lable {
         top: 25px;
         right: 25px;
