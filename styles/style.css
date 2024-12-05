@@ -35,7 +35,7 @@
         repeating-linear-gradient(to bottom, var(--gradient-net-color) 0px 2px, transparent 2px 4px),
         linear-gradient(to bottom, var(--gradient-vertical-color-first) 00.01%, var(--gradient-vertical-color-last));
     background-size: cover;
-    background-attachment:fixed;
+    background-attachment: fixed;
     color: var(--font-color);
 }
 
@@ -64,7 +64,7 @@
 }
 
 .h1__title {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 /* Меню выбора темы */
@@ -144,10 +144,10 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  padding: 0px 25px 0px;
-  gap: 27px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 25px 0px;
+    gap: 27px;
 }
 
 .content__group {
@@ -168,7 +168,8 @@
 }
 
 .content__title {
-    display: block;;
+    display: block;
+    ;
     align-self: self-start;
     margin: 4px 10px 4px;
     font-size: 18px;
@@ -181,7 +182,7 @@
     position: relative;
     height: 373px;
     width: 100%;
-    object-fit:cover;
+    object-fit: cover;
     object-position: left bottom;
 }
 
@@ -191,7 +192,8 @@
 }
 
 .figure {
-    display: block;;
+    display: block;
+    ;
     position: relative;
     width: 100%;
 }
@@ -203,8 +205,8 @@
 /* Картиночная */
 
 .picture {
-  width: 375px;
-  height: 375px;
+    width: 375px;
+    height: 375px;
 }
 
 .image__lable {
@@ -447,15 +449,19 @@ dialog::backdrop {
     .main {
         gap: 49px;
     }
+
     .header {
         width: min(100%, 700px);
     }
+
     .article {
         width: min(100%, 700px);
     }
+
     .content__image {
         height: 700px;
     }
+
     .header__title {
         margin-top: 136px;
         font-size: 23px;
@@ -464,12 +470,13 @@ dialog::backdrop {
     .title {
         font-size: 65px;
     }
+
     .h1__title {
-      font-size: 23px;
+        font-size: 23px;
     }
 
     .content__text {
-        line-height:21px;
+        line-height: 21px;
     }
 
     .save__button {
@@ -489,7 +496,7 @@ dialog::backdrop {
         height: 195px;
         width: 357px;
     }
-    
+
     .diag__block {
         margin: 30px 0px 0px;
         width: 293px;
@@ -511,10 +518,10 @@ dialog::backdrop {
     .page {
         font-family: var(--main-text), sans-serif;
     }
-  }
+}
 
 @supports (-webkit-text-stroke:0.3px) {
     .image__lable {
         -webkit-text-stroke: 0.3px var(--background-color);
     }
-  }
+}
