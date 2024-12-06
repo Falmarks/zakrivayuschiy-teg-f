@@ -168,7 +168,7 @@
     align-self: self-start;
     margin: 4px 10px 4px;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: var(--bold-font-weigh);
     line-height: 22px;
 }
 
