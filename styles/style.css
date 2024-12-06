@@ -154,10 +154,6 @@
     gap: 25px;
 }
 
-.border-top {
-    border-top: 2px solid var(--accent-color);
-}
-
 .border-bottom {
     border-bottom: 2px solid var(--accent-color);
 }
@@ -179,10 +175,10 @@
 .content__image {
     display: block;
     position: relative;
-    height: 373px;
+    height: 371px;
     width: 100%;
     object-fit: cover;
-    object-position: left bottom;
+    object-position: center;
 }
 
 .content__text {
@@ -457,7 +453,7 @@ dialog::backdrop {
     }
 
     .content__image {
-        height: 700px;
+        height: 698px;
     }
 
     .header__title {
@@ -501,7 +497,7 @@ dialog::backdrop {
     }
 
     .dialog__button {
-        width: 297px;
+        width: 293px;
         margin: 0px;
     }
 
